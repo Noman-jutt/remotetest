@@ -45,7 +45,7 @@ const PostComp = () => {
       <PostContent title={'지난 월요일에 했던 이벤트 중 가장 괜찮은 상품 뭐야?'} />
      
       <Reactions data={ReactionData} />
-      {[1, 2, 3].map((data) => <CommentSection />)}
+      {[1].map((data) => <CommentSection />)}
       <WriteComment />
     </div>
   )
@@ -147,19 +147,19 @@ const CommentSection = () => {
     type: 'reaction'
   },]
   return (
-    <div className='Commen_Section '>
+    <div className='Commen_Section  com_pr_16 '>
       <UserDetail profileImg={ProfileImg} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
       <div className='comment_Main_wrapper'>
-        <p className='p_CommetText'>어머 제가 있던 테이블이 제일 반응이 좋았나보네요🤭
+        <p className='p_CommetText '>어머 제가 있던 테이블이 제일 반응이 좋았나보네요🤭
           우짤래미님도 아시겠지만 저도 일반인 몸매 그 이상도 이하도
           아니잖아요?! 그런 제가 기꺼이 도전해봤는데 생각보다
           괜찮았어요! 오늘 중으로 라이브 리뷰 올라온다고 하니
           꼭 봐주세용~!</p>
         <Reactions data={ReactionData} />
-        {[1, 2, 3].map((data) =>
+        {[1].map((data) =>
           <div className='comments_reply'>
             <UserDetail profileImg={ProfileImg} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
-            <p className='p_CommetText'>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
+            <p className='p_CommetText com_pl_16'>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
             <Reactions data={ReactionDataCommetReply} />
           </div>)}
 

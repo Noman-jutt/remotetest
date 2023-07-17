@@ -8,6 +8,12 @@
 .com_px_16{
   padding: 0 16px;
 }
+.com_pr_16{
+  padding-right: 16px;
+}
+.com_pl_16{
+  padding-left: 26px;
+}
 
 .com_items_center {
   align-items: center;
