@@ -9,6 +9,11 @@ import ThreeDotIcon from "../../assets/dots-icon.svg"
 import ProfileImg from "../../assets/profile-img.png"
 import ActivityIcon from "../../assets/activity-icon.svg"
 import ImgIcom from "../../assets/img-icon.svg"
+import SliderImg from "../../assets/slider.jpg"
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import "../../common.css"
 
 const PostComp = () => {
@@ -38,13 +43,10 @@ const PostComp = () => {
       <PostHeader title={'자유톡'} />
       <UserDetail profileImg={ProfileImg} activityIcon={ActivityIcon} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
       <PostContent title={'지난 월요일에 했던 이벤트 중 가장 괜찮은 상품 뭐야?'} />
-      <Tags data={['2023', 'todayismonday', 'top', 'pops!', 'wow', 'row']} />
+     
       <Reactions data={ReactionData} />
       {[1, 2, 3].map((data) => <CommentSection />)}
-
       <WriteComment />
-
-
     </div>
   )
 }
@@ -87,9 +89,9 @@ const UserDetail = ({ profileImg, userName, lastActive, activityIcon, weight, si
 
 const PostContent = ({ title }) => {
   return (
-    <div className='post_content_wrapper com_px_16'>
-      <h2 className='event_title'>{title}</h2>
-      <p className='event_desc'>
+    <div className='post_content_wrapper '>
+      <h2 className='event_title com_px_16'>{title}</h2>
+      <p className='event_desc com_px_16'>
         지난 월요일에 2023년 S/S 트렌드 알아보기 이벤트 참석했던 팝들아~
         혹시 어떤 상품이 제일 괜찮았어?
         <br /><br />
@@ -100,6 +102,8 @@ const PostContent = ({ title }) => {
         아닌 사람들도 잘 어울릴지 너무너무 궁금해ㅜㅜ로우라이즈 테이블에
         있었던 팝들 있으면 어땠는지 후기 좀 공유해주라~~!
       </p>
+       <Tags data={['2023', 'todayismonday', 'top', 'pops!', 'wow', 'row']} />
+      <SimpleSlider />
     </div>
   )
 }
@@ -173,3 +177,25 @@ const WriteComment = () => {
 
   )
 }
+const SimpleSlider = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
+  return (
+    <div className='img_wrapper_main'>
+      <Slider {...settings}>
+        {[1,2,3,4].map((data) => (
+          <div className='img_wrappper'>
+            <img src={SliderImg} alt='image' />
+          </div>
+
+        ))}
+      </Slider>
+    </div>
+  );
+};
