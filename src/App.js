@@ -1,4 +1,3 @@
-import Layout from './layout';
 import './common.css';
 import Posts from './pages/posts';
 
