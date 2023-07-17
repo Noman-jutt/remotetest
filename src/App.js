@@ -1,14 +1,13 @@
-
-import './App.css';
 import Layout from './layout';
-import {Posts} from "./pages/export"
+import './common.css';
+import Posts from './pages/posts';
 
 function App() {
   return (
-    <div className='App'>
-    <Layout>
-     <Posts/>
-    </Layout>
+    <div className='App com_flex com_items_center com_justify_center'>
+      {/* <Layout> */}
+      <Posts />
+      {/* </Layout> */}
     </div>
   );
 }

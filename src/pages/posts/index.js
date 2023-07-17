@@ -1,11 +1,12 @@
 import React from 'react'
-import {PostsModule} from "../../modules/export";
+import PostComp from '../../components/post';
 
 const Posts = () => {
   return (
     <>
-      <PostsModule />
+      <PostComp />
     </>
+
   )
 }
 
