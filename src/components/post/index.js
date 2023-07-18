@@ -61,11 +61,15 @@ const PostHeader = ({ title }) => {
   )
 }
 
-const UserDetail = ({ profileImg, userName, lastActive, activityIcon, weight, size, isShowForComment }) => {
+const UserDetail = ({ profileImg, userName, lastActive, activityIcon, weight, size, isShowForComment, className }) => {
   return (
-    <div className='com_flex com_items_center com_justify_between com_px_16'>
+    <div className={`com_flex com_items_center com_justify_between com_px_16 ${className}`}>
       <div className='user_info com_flex com_items_center'>
-        <img src={profileImg} alt='icon' className='user_img' height={34} width={34} />
+        <div className='img_wrapper'>
+        <img src={profileImg} alt='icon' className='user_img' />
+
+        </div>
+      
         <div>
           <p className='user_name'>
             {userName}
@@ -115,9 +119,9 @@ const Tags = ({ data }) => {
   )
 }
 
-const Reactions = ({ data }) => {
+const Reactions = ({ data, className }) => {
   return (
-    <div className='com_flex com_items_center reaction com_flex_Wrap'>
+    <div className={`com_flex com_items_center Post_reaction com_flex_Wrap com_pr_16 ${className}`}>
       {data.map((obj, i) => (
         <div key={i} className='com_flex com_items_center cout_inner_wrapper '>
           <img src={obj.icon} alt='icon' height={20} width={17} />
@@ -157,10 +161,10 @@ const CommentSection = () => {
         <Reactions data={ReactionData} />
         {[1, 2, 3, 4].map((data) =>
           <div className='comments_reply'>
-            <UserDetail profileImg={UserPF} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
+            <UserDetail className='reply_Profile' profileImg={UserPF} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
             <p className='p_CommetText com_pl_69 '>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
             <div className='com_pl_69'>
-              <Reactions data={ReactionDataCommetReply} />
+              <Reactions className={"comment_Reaction"} data={ReactionDataCommetReply} />
             </div>
 
           </div>)}
