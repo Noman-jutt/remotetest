@@ -1,6 +1,5 @@
 .App {
   height: 100%;
-  
 }
 .com_flex {
   display: flex;
@@ -18,7 +17,6 @@
 .com_items_center {
   align-items: center;
 }
-
 .com_justify_center {
   justify-content: center;
 }

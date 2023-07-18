@@ -223,3 +223,7 @@
 .comment_Reaction{
   padding-left: 0 ;
 }
+.your-slider .slick-prev,
+.your-slider .slick-next {
+  display: none;
+}
