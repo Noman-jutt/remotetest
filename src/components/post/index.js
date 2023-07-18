@@ -158,7 +158,7 @@ const CommentSection = () => {
           아니잖아요?! 그런 제가 기꺼이 도전해봤는데 생각보다
           괜찮았어요! 오늘 중으로 라이브 리뷰 올라온다고 하니
           꼭 봐주세용~!</p>
-        <Reactions data={ReactionData} />
+        <Reactions className={"comment_Reaction"}  data={ReactionData} />
         {[1, 2, 3, 4].map((data) =>
           <div className='comments_reply'>
             <UserDetail className='reply_Profile' profileImg={UserPF} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
