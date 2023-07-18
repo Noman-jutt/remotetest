@@ -7,17 +7,16 @@ import CommentIcon from "../../assets/comment-icon.svg"
 import SaveIcon from "../../assets/save-icon.svg"
 import ThreeDotIcon from "../../assets/dots-icon.svg"
 import ProfileImg from "../../assets/profile-img.png"
+import UserPF from "../../assets/userPf.png"
 import ActivityIcon from "../../assets/activity-icon.svg"
 import ImgIcom from "../../assets/img-icon.svg"
 import SliderImg from "../../assets/slider.jpg"
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "../../common.css"
 
 const PostComp = () => {
-
   const ReactionData = [
     {
       icon: HraetIcon,
@@ -43,7 +42,7 @@ const PostComp = () => {
       <PostHeader title={'자유톡'} />
       <UserDetail profileImg={ProfileImg} activityIcon={ActivityIcon} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
       <PostContent title={'지난 월요일에 했던 이벤트 중 가장 괜찮은 상품 뭐야?'} />
-     
+
       <Reactions data={ReactionData} />
       {[1].map((data) => <CommentSection />)}
       <WriteComment />
@@ -55,9 +54,9 @@ export default PostComp
 const PostHeader = ({ title }) => {
   return (
     <div className='com_flex com_items_center com_justify_between post_header'>
-      <img src={ArrowLeftIcon} />
+      <img src={ArrowLeftIcon} alt='arrow-icon' />
       <p className='p_header_title'>{title}</p>
-      <img src={BellIcon} />
+      <img src={BellIcon} alt='bell-icon' />
     </div>
   )
 }
@@ -102,7 +101,7 @@ const PostContent = ({ title }) => {
         아닌 사람들도 잘 어울릴지 너무너무 궁금해ㅜㅜ로우라이즈 테이블에
         있었던 팝들 있으면 어땠는지 후기 좀 공유해주라~~!
       </p>
-       <Tags data={['2023', 'todayismonday', 'top', 'pops!', 'wow', 'row']} />
+      <Tags data={['2023', 'todayismonday', 'top', 'pops!', 'wow', 'row']} />
       <SimpleSlider />
     </div>
   )
@@ -156,9 +155,9 @@ const CommentSection = () => {
           괜찮았어요! 오늘 중으로 라이브 리뷰 올라온다고 하니
           꼭 봐주세용~!</p>
         <Reactions data={ReactionData} />
-        {[1].map((data) =>
+        {[1,2,3,4].map((data) =>
           <div className='comments_reply'>
-            <UserDetail profileImg={ProfileImg} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
+            <UserDetail profileImg={UserPF} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
             <p className='p_CommetText com_pl_16'>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
             <Reactions data={ReactionDataCommetReply} />
           </div>)}
@@ -170,7 +169,7 @@ const CommentSection = () => {
 const WriteComment = () => {
   return (
     <div className='comment_Box '>
-      <img src={ImgIcom} />
+      <img src={ImgIcom} alt='icon' />
       <input type='text' placeholder='댓글을 남겨주세요.' />
       <button className='btn_registraion'>등록</button>
     </div>
@@ -189,9 +188,9 @@ const SimpleSlider = () => {
   return (
     <div className='img_wrapper_main'>
       <Slider {...settings}>
-        {[1,2,3,4].map((data) => (
+        {[1, 2, 3, 4].map((data) => (
           <div className='img_wrappper'>
-            <img src={SliderImg} alt='image' />
+            <img src={SliderImg} alt='slides' />
           </div>
 
         ))}

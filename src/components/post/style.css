@@ -1,6 +1,6 @@
 .post_wrapper {
-  min-width: 350px;
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   height: 100%;
   box-sizing: border-box;
   position: relative;
@@ -158,20 +158,20 @@
 
 .comment_Box {
   height: 42px;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  /* box-sizing: border-box; */
 }
 
-.comment_Box>input {
+.comment_Box>input[type=text]{
   color: #AFB9CA;
   position: relative;
   height: 100%;
+  width:100%;
+  box-sizing: border-box;
   padding: 0 56px 0 56px;
-  /* padding: 20px; */
   border: 1px solid #F7F8FA;
 }
 
