@@ -155,11 +155,14 @@ const CommentSection = () => {
           괜찮았어요! 오늘 중으로 라이브 리뷰 올라온다고 하니
           꼭 봐주세용~!</p>
         <Reactions data={ReactionData} />
-        {[1,2,3,4].map((data) =>
+        {[1, 2, 3, 4].map((data) =>
           <div className='comments_reply'>
             <UserDetail profileImg={UserPF} activityIcon={ActivityIcon} isShowForComment={true} userName={'안녕 나 응애 '} lastActive={'1일전'} weight={53} size={165} />
-            <p className='p_CommetText com_pl_16'>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
-            <Reactions data={ReactionDataCommetReply} />
+            <p className='p_CommetText com_pl_69 '>오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다</p>
+            <div className='com_pl_69'>
+              <Reactions data={ReactionDataCommetReply} />
+            </div>
+
           </div>)}
 
       </div>
